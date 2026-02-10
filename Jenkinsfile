@@ -5,7 +5,6 @@ pipeline{
         DOCKER = "C:/Program Files/Docker/Docker/resources/bin/docker.exe"
     }
         
-    }
 
     stages{
         stage('Build'){
@@ -29,4 +28,5 @@ pipeline{
     }
 
 }
+
 
