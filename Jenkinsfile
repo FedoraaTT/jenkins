@@ -10,23 +10,24 @@ pipeline{
         stage('Build'){
             steps{
                 echo 'Building the application...'
-                bat '%DOCKER% build -t python-app .'
+                bat '"\"%DOCKER%" build -t python-app .'
             }
         }
         stage('Test'){
             steps{
                 echo 'Running tests...'
-                bat '%DOCKER% run python-app pytest'
+                bat '"\"%DOCKER%" run python-app pytest'
             }
         }
         stage('Deploy'){
             steps{
                 echo 'Deploying the application...'
-                bat '%DOCKER% run  python-app'
+                bat '"\"%DOCKER%" run  python-app'
             }
         }
     }
 
 }
+
 
 
