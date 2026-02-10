@@ -14,18 +14,19 @@ pipeline{
         stage('Test'){
             steps{
                 echo 'Running tests...'
-                bat 'docker run python-app pytest'
+                bat 'docker run -rm python-app pytest'
             }
         }
         stage('Deploy'){
             steps{
                 echo 'Deploying the application...'
-                bat 'docker run  python-app'
+                bat 'docker run -rm python-app'
             }
         }
     }
 
 }
+
 
 
 
